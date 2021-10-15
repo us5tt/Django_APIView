@@ -1,9 +1,16 @@
 from rest_framework.generics import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.http import HttpResponse
+from django.shortcuts import render
+
 
 from .models import Pars
 from .serializers import ParsSerializer
+
+
+def index(request):
+    return render(request, "api/index.html")
 
 
 class ParsView(APIView):
